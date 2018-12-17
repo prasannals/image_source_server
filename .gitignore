@@ -11,6 +11,7 @@ __pycache__/
 build/
 develop-eggs/
 dist/
+data/
 downloads/
 eggs/
 .eggs/
@@ -102,3 +103,5 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+test.py
