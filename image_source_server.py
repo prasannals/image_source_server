@@ -2,6 +2,7 @@ from flask import Flask
 from flask import request
 from datetime import datetime
 import os
+import sys
 
 class ImageSourceServer:
     def __init__(self, train, predict, storage_dir = './data/', incoming_fname = 'image',
@@ -38,17 +39,17 @@ class ImageSourceServer:
             request.files[self.incoming_fname].save(save_path)
             return 'done'
 
-        # @self.app.route('/train', methods=['GET'])
-        # def train():
-        #     trainRes = self.train(self.data_dir)
-        #     print(trainRes)
-        #     return '' if trainRes is None else trainRes
+
         @self.app.route('/train', methods=['POST'])
         def train():
+            stdout = sys.stdout
+            log = Log(stdout)
+            sys.stdout = log
             trainRes = self.train(self.data_dir, request.json)
             print(request.json)
             print(trainRes)
-            return '' if trainRes is None else trainRes
+            sys.stdout = stdout
+            return log.buffer
 
         @self.app.route('/predict', methods=['POST'])
         def predict():
@@ -63,3 +64,15 @@ class ImageSourceServer:
 
     def run(self, host= '0.0.0.0', port_number=12221, threaded=False):
         self.app.run(host=host, port=port_number, threaded=threaded)
+
+class Log:
+    def __init__(self, stdout):
+        self.buffer = ''
+        self.stdout = stdout
+
+    def write(self, data):
+        self.buffer = self.buffer + data
+        self.stdout.write(data)
+
+    def flush(self):
+        self.stdout.flush()
