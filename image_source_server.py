@@ -38,9 +38,15 @@ class ImageSourceServer:
             request.files[self.incoming_fname].save(save_path)
             return 'done'
 
-        @self.app.route('/train', methods=['GET'])
+        # @self.app.route('/train', methods=['GET'])
+        # def train():
+        #     trainRes = self.train(self.data_dir)
+        #     print(trainRes)
+        #     return '' if trainRes is None else trainRes
+        @self.app.route('/train', methods=['POST'])
         def train():
-            trainRes = self.train(self.data_dir)
+            trainRes = self.train(self.data_dir, request.json)
+            print(request.json)
             print(trainRes)
             return '' if trainRes is None else trainRes
 
