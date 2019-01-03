@@ -4,8 +4,15 @@ Server for <a href="https://expo.io/@prasannals/image-source">Image Source</a> a
 
 ### Usage
 
-1. Clone this repo (image_source_server). 
-2. Implement the "train" and "predict" methods and pass it into the ImageSourceServer constructor (example shown below)
+1. Install <a href="http://flask.pocoo.org/">Flask</a> if you haven't already (Flask comes preinstalled if you have Anaconda)
+```
+pip install Flask
+```
+2. Install image_source_server. 
+```
+pip install image_source_server
+```
+3. Create an ImageSourceServer object, implement the "train" and "predict" methods and pass it into the ImageSourceServer constructor (example shown below)
 ```
 from image_source_server import ImageSourceServer
 
@@ -35,8 +42,9 @@ predict(image_uri)
     return value - will be converted to a string (if not already a string) and sent to the Image Source app. This string will be displayed as an alert to the user
 ```
 * "serv.run()" starts the server
-3. Install the Expo app. <a href="https://play.google.com/store/apps/details?id=host.exp.exponent">Play Store Link</a> (Although there is an Expo app for iOS, Apple doesn't allow for other apps to be run on the Expo app. An iOS stand alone Image Source app release is planned in future.)
-3. Visit <a href="https://expo.io/@prasannals/image-source">Image Source</a> app page on expo. Scan the QR code on your Expo android app to open the Image Source app.
+4. Install the Expo app. <a href="https://play.google.com/store/apps/details?id=host.exp.exponent">Play Store Link</a> (Although there is an Expo app for iOS, Apple doesn't allow for other apps to be run on the Expo app. An iOS stand alone Image Source app release is planned in future.)
+5. Visit <a href="https://expo.io/@prasannals/image-source">Image Source</a> app page on expo. Scan the QR code on your Expo android app to open the Image Source app.
+6. Run the server script (and make sure you've called the "run" method)
 
 #### Configure the app to work with server
 1. Go to "Settings" tab on the Image Source app.
