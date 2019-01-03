@@ -42,9 +42,9 @@ predict(image_uri)
     return value - will be converted to a string (if not already a string) and sent to the Image Source app. This string will be displayed as an alert to the user
 ```
 * "serv.run()" starts the server
-4. Install the Expo app. <a href="https://play.google.com/store/apps/details?id=host.exp.exponent">Play Store Link</a> (Although there is an Expo app for iOS, Apple doesn't allow for other apps to be run on the Expo app. An iOS stand alone Image Source app release is planned in future.)
-5. Visit <a href="https://expo.io/@prasannals/image-source">Image Source</a> app page on expo. Scan the QR code on your Expo android app to open the Image Source app.
-6. Run the server script (and make sure you've called the "run" method)
+4. Run the python script (and make sure you've called the "run" method)
+5. Install the Expo app. <a href="https://play.google.com/store/apps/details?id=host.exp.exponent">Play Store Link</a> (Although there is an Expo app for iOS, Apple doesn't allow for other apps to be run on the Expo app. An iOS stand alone Image Source app release is planned in future.)
+6. Visit <a href="https://expo.io/@prasannals/image-source">Image Source</a> app page on expo. Scan the QR code on your Expo android app to open the Image Source app.
 
 #### Configure the app to work with server
 1. Go to "Settings" tab on the Image Source app.
