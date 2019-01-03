@@ -2,6 +2,8 @@
 
 Server for <a href="https://expo.io/@prasannals/image-source">Image Source</a> app
 
+Server setup walkthrough video - https://youtu.be/aglR4Y3AdWY
+
 ### Usage
 
 1. Install <a href="http://flask.pocoo.org/">Flask</a> if you haven't already (Flask comes preinstalled if you have Anaconda)
